@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useEffect, useState} from 'react';
+import CardList from './components/cardList';
+import NavBar from './components/NavBar';
+import SerachBar from './components/SerachBar';
 
-function App() {
+export default function App() {
+
+  const [cities, setCities] = useState([])
+
+  useEffect(() => {
+    fetch(`https://restcountries.eu/rest/v2/all`)
+    .then(r => r.json())
+    .then((paises) => {
+      setCities(paises);
+    });
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <SerachBar />
+      <CardList cities={cities}/>
     </div>
   );
 }
 
-export default App;
+
