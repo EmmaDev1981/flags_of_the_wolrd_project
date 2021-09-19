@@ -1,12 +1,29 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import CardList from './components/cardList';
 import NavBar from './components/NavBar';
-import SerachBar from './components/SerachBar';
+import Error404 from './components/Error404';
+import About from './components/About';
+import Detalles from './components/Detalles';
 
 export default function App() {
 
   const [cities, setCities] = useState([])
+  const [detalle, setDetalles] = useState({})
+  
+  function onClose(id) {
+    let nuevos = cities.filter(c => c.alpha3Code !== id)
+    setCities(nuevos)
+  }
+
+  function onFilter(paisId) {
+    let filtrado = cities.filter(c => c.alpha3Code === paisId);
+    console.log(filtrado)
+    if(filtrado.length > 0) {
+        setDetalles (filtrado[0]);
+    }
+  }
 
   useEffect(() => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -16,11 +33,26 @@ export default function App() {
     });
   }, [])
 
+
   return (
     <div className="App">
-      <NavBar />
-      <SerachBar />
-      <CardList cities={cities}/>
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <CardList cities={cities} onClose={onClose} onFilter={onFilter}/>}
+          />
+            <Route
+            exact
+            path="/detalles"
+            render={() => <Detalles detalle={detalle} />}
+          />
+          <Route path="/about" component={About} />
+          <Route path="*" component={Error404} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
