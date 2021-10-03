@@ -1,7 +1,13 @@
 # FLAGS OF THE WORLD APP
 
 <p>
-  <img height="600" src="./banderas.jpg" />
+  <img height="400" src="./banderas.jpg" />
+</p>
+
+# DETAILS
+
+<p>
+  <img height="400" src="./banderas2.jpg" />
 </p>
 
 ## Objetivos del Proyecto
