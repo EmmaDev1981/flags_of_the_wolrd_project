@@ -7,6 +7,8 @@ import SerachBar from "./SerachBar";
 
 function CardList({cities, onClose, onFilter}) {
 
+    console.log(cities)
+
     return (
         <>
         <SerachBar />
@@ -16,11 +18,11 @@ function CardList({cities, onClose, onFilter}) {
             key={c.alpha3Code}
             name={c.name}
             capital={c.capital}
-            flag={c.flag}
+            flag={c.flags[0]}
             population={c.population}
             subregion={c.subregion}
-            onFilter={() => onFilter(c.alpha3Code)}
-            onClose={() => onClose(c.alpha3Code)}
+            onFilter={() => onFilter(c.area)}
+            onClose={() => onClose(c.area)}
             />)}
         </div>
         </>

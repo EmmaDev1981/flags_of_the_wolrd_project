@@ -5,7 +5,9 @@ import './styles/NavBar.css'
 function NavBar() {
     return (
         <div className="nav-div">
-            <h2>Banderas del Mundo</h2>
+            <h2>Home</h2>
+            <h2>Detalles</h2>
+            <h2>About</h2>
         </div>
     )
 }

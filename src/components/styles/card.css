@@ -3,18 +3,24 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   background-color: bisque;
+   background-color:rgb(197, 139, 118);
    border: 2px solid black;
    width: 250px;
    height: 350px;
    padding: 10px 10px;
-   margin: 10px 10px;
+   margin: 30px 30px;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px 1px #000;
 }
 
-img {
+.card:hover {
+    box-shadow: 5px 5px 10px 1px rgb(8, 235, 65);
+}
 
-    width:170px;
-    height:114px;
+.card img {
+
+    width:220px;
+    height:140px;
 }
 
 .card h4 {
@@ -29,8 +35,22 @@ img {
 }
 
 .btn-cerrar {
+    background-color: orangered;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 25px;
+    margin-right: 15px;
+    cursor: pointer
+
+}
+
+.btn-info {
+    background-color:darkcyan;
+    border-radius: 5px;
     margin: 5px;
     margin-top: 15px;
     margin-right: 15px;
     cursor: pointer
+
+    
 }

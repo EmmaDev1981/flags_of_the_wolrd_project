@@ -1,6 +1,12 @@
 .search-div {
+    padding: 20px;
     display: flex;
     justify-content: center;
-    border: 2px solid black;
-    margin: 2px;
+    background-color: aquamarine;
+}
+
+.search-div h2 {
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 20px;
+
 }

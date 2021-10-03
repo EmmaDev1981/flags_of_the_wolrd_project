@@ -13,20 +13,19 @@ export default function App() {
   const [detalle, setDetalles] = useState({})
   
   function onClose(id) {
-    let nuevos = cities.filter(c => c.alpha3Code !== id)
+    let nuevos = cities.filter(c => c.area !== id)
     setCities(nuevos)
   }
 
   function onFilter(paisId) {
-    let filtrado = cities.filter(c => c.alpha3Code === paisId);
-    console.log(filtrado)
+    let filtrado = cities.filter(c => c.area === paisId);
     if(filtrado.length > 0) {
         setDetalles (filtrado[0]);
     }
   }
 
   useEffect(() => {
-    fetch(`https://restcountries.eu/rest/v2/all`)
+    fetch(`https://restcountries.com/v3/all`)
     .then(r => r.json())
     .then((paises) => {
       setCities(paises);

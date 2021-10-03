@@ -4,7 +4,8 @@ import './styles/SearchBar.css'
 function SerachBar() {
     return (
         <div className="search-div">
-            <h2>search div</h2>
+            <input></input>
+            <h2>search</h2>
         </div>
     )
 }
