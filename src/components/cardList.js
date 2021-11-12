@@ -7,8 +7,6 @@ import SerachBar from "./SerachBar";
 
 function CardList({cities, onClose, onFilter}) {
 
-    console.log(cities)
-
     return (
         <>
         <SerachBar />
