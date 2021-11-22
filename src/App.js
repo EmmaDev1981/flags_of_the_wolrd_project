@@ -8,7 +8,6 @@ import About from './components/About';
 import Detalles from './components/Detalles';
 
 export default function App() {
-
   const [cities, setCities] = useState([])
   const [detalle, setDetalles] = useState({})
   
@@ -32,7 +31,6 @@ export default function App() {
     });
   }, [])
 
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -55,5 +53,3 @@ export default function App() {
     </div>
   );
 }
-
-
