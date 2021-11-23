@@ -9,5 +9,4 @@ function SerachBar() {
         </div>
     )
 }
-
 export default SerachBar
